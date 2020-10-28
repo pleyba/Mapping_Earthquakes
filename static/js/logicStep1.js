@@ -39,10 +39,10 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
     console.log(data);
   // Creating a GeoJSON layer with the retrieved data.
   L.geoJson(data, {
-    //       onEachFeature: function(feature, layer) {
-    //       layer.bindPopup("<h3> Magnitude: " + features[0].properties.mag + "<h3> <hr><h3> Location: "
-    //       + features[0].properties.place + "</h3>");
-    //   }
+          onEachFeature: function(feature, layer) {
+          layer.bindPopup("<h3> Magnitude: " + feature.properties.mag + "<h3> <hr><h3> Location: "
+          + feature.properties.place + "</h3>");
+      }
   }).addTo(map);
 });
 
